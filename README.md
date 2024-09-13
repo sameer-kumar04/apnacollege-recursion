@@ -1,3 +1,3 @@
 # apnacollege-recursion
 
-Solutuions os some easy and intermediate recursion questions 
+Solutuions of some easy and intermediate recursion questions 
