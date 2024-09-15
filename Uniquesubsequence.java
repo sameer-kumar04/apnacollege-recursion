@@ -5,12 +5,12 @@ public class Uniquesubsequence {
         String str = "aaa"; // for aaa which have same characters
         HashSet<String> set = new HashSet<>(); // beacuse set contains only unique values (not repitions allowed in set
                                                // )
-        finduniquesubsequence(str, 0, "", set);
+        finduniquesubsequence(str, "", set);
     }
 
-    public static void finduniquesubsequence(String str, int index, String newString, Set<String> set) {
+    public static void finduniquesubsequence(String str, String newString, Set<String> set) {
 
-        if (index == str.length()) {
+        if (str.isEmpty()) {
             if (set.contains(newString)) {
                 return;
             } else {
@@ -20,12 +20,12 @@ public class Uniquesubsequence {
             }
         }
 
-        char currChar = str.charAt(index);
+        char currChar = str.charAt(0);
 
         // want to be in [characters choice is that it wants to come or not ]
-        finduniquesubsequence(str, index + 1, newString + currChar, set);
+        finduniquesubsequence(str.substring(1), newString + currChar, set);
 
         // not want to be in
-        finduniquesubsequence(str, index + 1, newString, set);
+        finduniquesubsequence(str.substring(1), newString, set);
     }
 }
