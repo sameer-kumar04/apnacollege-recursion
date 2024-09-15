@@ -3,22 +3,22 @@ public class Subsequence {
     public static void main(String[] args) {
         String str = "abc";
 
-        findsubsequence(str, 0, "");
+        findsubsequence(str, "");
     }
 
-    public static void findsubsequence(String str, int index, String newString) {
+    public static void findsubsequence(String str, String newString) {
 
-        if (index == str.length()) {
+        if (str.isEmpty()) {
             System.out.println(newString);
             return;
         }
 
-        char currChar = str.charAt(index);
+        char currChar = str.charAt(0);
 
         // want to be in [characters choice is that it wants to come or not ]
-        findsubsequence(str, index + 1, newString + currChar);
+        findsubsequence(str.substring(1), newString + currChar);
 
         // not want to be in
-        findsubsequence(str, index + 1, newString);
+        findsubsequence(str.substring(1), newString);
     }
 }
